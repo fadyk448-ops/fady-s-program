@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>صفحة الضحك 😂</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#fff4f7;--card:#fff;--ink:#2b2030;--accent:#e8457a;--soft:#ffe0ea;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1420;--card:#2a1f30;--ink:#f6eaf0;--accent:#ff6b9c;--soft:#3d2a45;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1c1420;--card:#2a1f30;--ink:#f6eaf0;--accent:#ff6b9c;--soft:#3d2a45;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Tahoma,Arial,sans-serif;text-align:center;padding:16px;max-width:480px;margin-inline:auto}
+h1{font-size:26px;margin:8px 0}
+.card{background:var(--card);border-radius:20px;padding:18px;margin:14px 0;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.out{min-height:70px;font-size:19px;line-height:1.7;background:var(--soft);border-radius:14px;padding:14px;margin-bottom:12px;display:flex;align-items:center;justify-content:center}
+button,a.btn{display:inline-block;background:var(--accent);color:#fff;border:0;border-radius:14px;padding:12px 18px;font-size:17px;font-family:inherit;text-decoration:none;cursor:pointer;margin:4px}
+button:active{transform:scale(.96)}
+.opts button{background:var(--soft);color:var(--ink)}
+h2{font-size:19px;margin:0 0 10px}
+input{width:100%;padding:10px;border-radius:12px;border:1px solid var(--soft);background:var(--bg);color:var(--ink);font:inherit}
+.wa{padding:0;overflow:hidden;--wbg:#ece5dd;--wme:#dcf8c6;--wother:#fff;--wink:#111;--whead:#075e54;--wbar:#f0f0f0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .wa{--wbg:#0b141a;--wme:#005c4b;--wother:#202c33;--wink:#e9edef;--whead:#202c33;--wbar:#202c33}}
+:root[data-theme="dark"] .wa{--wbg:#0b141a;--wme:#005c4b;--wother:#202c33;--wink:#e9edef;--whead:#202c33;--wbar:#202c33}
+.wh{display:flex;align-items:center;gap:10px;background:var(--whead);color:#fff;padding:10px 14px;text-align:right}
+.av{width:38px;height:38px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;font-size:20px}
+.wt{font-weight:700;font-size:16px}
+.wn{background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.4);color:#fff;padding:2px 0;font-size:13px;border-radius:0;width:auto}
+.wn::placeholder{color:rgba(255,255,255,.7)}
+.cl{height:340px;overflow-y:auto;background:var(--wbg);padding:10px;text-align:right;margin:0;display:flex;flex-direction:column}
+.m{background:var(--wother);color:var(--wink);border-radius:2px 10px 10px 10px;padding:6px 10px 4px;margin:3px 0;max-width:80%;align-self:flex-end;word-break:break-word;box-shadow:0 1px 1px rgba(0,0,0,.13)}
+.m.me{background:var(--wme);border-radius:10px 2px 10px 10px;align-self:flex-start}
+.m b{display:block;font-size:12px;color:#128c7e}
+.m .tm{display:block;font-size:10px;opacity:.6;text-align:left;margin-top:2px}
+.m.act{align-self:center;background:rgba(225,245,254,.92);color:#333;font-size:12px;text-align:center;border-radius:8px;max-width:90%}
+.row{display:flex;gap:6px;align-items:center;background:var(--wbar);padding:8px}.row input{flex:1;border-radius:22px;border:0;padding:10px 14px}
+.snd{width:44px;height:44px;border-radius:50%;padding:0;margin:0;background:#25d366;font-size:18px;transform:scaleX(-1)}
+.sm{font-size:13px;min-height:18px;margin:0;padding:2px 10px;background:var(--wbar);color:var(--wink)}
+</style>
+</head>
+<body>
+<h1>😂 صفحة تضحّك القمر 🌸</h1>
+<p>اضغطي واضحكي، ممنوع الزعل هنا!</p>
+
+<div class="card">
+<h2>🎬 سؤال وجواب</h2>
+<div class="out" id="qq"></div>
+<div class="opts" id="qa" style="display:grid;grid-template-columns:1fr 1fr;gap:6px"></div>
+<p id="qr" style="min-height:24px;margin:10px 0 0"></p>
+<button id="qn" onclick="nextQ()" style="display:none">السؤال التالي ⏭️</button>
+</div>
+
+<div class="card">
+<h2>🤔 تفضلي إيه؟</h2>
+<div class="out" id="wyr">مستعدة؟</div>
+<div class="opts"><button id="a" onclick="nextWyr()">ابدأي</button><button id="b" onclick="nextWyr()">التالي</button></div>
+</div>
+
+<div class="card">
+<h2>🎯 تحدي هبل</h2>
+<div class="out" id="ch">جاهزة للتحدي؟</div>
+<button onclick="nextCh()">هاتلي تحدي</button>
+</div>
+
+<div class="card">
+<h2>📱 فيديوهات مضحكة</h2>
+<p>التيك توك مش بيتفتح جوه الصفحة، بس الزراير دي توديكي لأحسن فيديوهات:</p>
+<a class="btn" href="https://www.tiktok.com/search?q=%D9%85%D9%8A%D8%AF%20%D8%AA%D8%B1%D9%85" target="_blank" rel="noopener">ميد ترم 🎬</a>
+<a class="btn" href="https://www.tiktok.com/search?q=%D9%81%D9%8A%D8%AF%D9%8A%D9%88%D9%87%D8%A7%D8%AA%20%D9%85%D8%B6%D8%AD%D9%83%D8%A9" target="_blank" rel="noopener">فيديوهات مضحكة 😹</a>
+</div>
+
+<div class="card">
+<h2>🎁 مفاجأة</h2>
+<div class="out" id="sur">اضغطي عشان تفتحي الكارت 💌</div>
+<button onclick="openSur()">افتحي</button>
+</div>
+
+<div class="card wa">
+<div class="wh"><div class="av">💬</div><div><div class="wt">شات بينا</div><input id="cname" class="wn" placeholder="اكتب اسمك هنا" oninput="setName(this.value)"></div></div>
+<div id="cl" class="cl"></div>
+<p id="cn" class="sm"></p>
+<div class="row"><input id="ci" placeholder="اكتب رسالة" onkeydown="if(event.key==='Enter')sendTyped()"><button class="snd" onclick="sendTyped()" aria-label="ابعت">➤</button></div>
+</div>
+
+<script>
+const J=[
+"مسلسل بيقولك الحلقة الجاية فيها مفاجأة، والمفاجأة إنهم هيعملوا 'ريكاب' للحلقة اللي فاتت 😭",
+"أنا بحب المسلسلات لأن فيها حاجة مش موجودة في حياتي: نهاية 😂",
+"قالولها كفاية مسلسلات النهاردة، قالت حلقة واحدة بس... وبقت الساعة 4 الفجر 🌙",
+"الواحد بيقول هنام بدري وبعدين بيتفرج على 'الحلقة الأخيرة بس' للمرة الخامسة 🙃",
+"البطل في كل مسلسل: الكل عارف إنه بيحبها، إلا هو وهي 🤦",
+"فيه ناس بتحل مشاكلها بالكلام، وفيه ناس بتشوف حلقة كمان وتنسى المشكلة 📺",
+"عدّى يوم من غير ضحك؟ اعتبريه يوم ضايع، ودلوقتي هنعوّضه 😎",
+"أنا مش بتأخر، أنا بس بدّي الناس فرصة تشتاق 😌"];
+const W=[
+"تاكلي كشري طول عمرك ولا بيتزا؟","تتفرجي على مسلسل بنهاية وحشة ولا ما تعرفيش النهاية؟",
+"صوتك يبقى زي صوت القطة ولا الكتكوت؟","تنامي 12 ساعة كل يوم ولا ما تناميش غير 3؟",
+"كل الناس تفتكرك مشهورة ولا كل الناس تحبك بجد؟","تاكلي حلو طول اليوم ولا تشوفي مسلسلات طول اليوم؟"];
+const C=[
+"ابعتيلي أغرب سيلفي عندك 🤳","قلّدي صوت قطة وابعتيه فويس 🐱","قولي جملة من مسلسل بصوت درامي 🎭",
+"ابعتيلي أحلى ميم عندك دلوقتي 😂","اختاري إيموجي يوصف مزاجك دلوقتي وفسّري ليه","احكيلي أغبى حاجة عملتيها السنة دي 🙈",
+"ابعتيلي فويس بتقولي فيه اسمك بصوت روبوت 🤖",
+"اعملي وش مضحك وابعتيلي سيلفي بيه 🤪",
+"احكي قصة اليوم كله بصوت مذيعة أخبار 🎙️",
+"قولي 'شيخ المشايخ' عشر مرات بسرعة من غير ما تغلطي 😂",
+"ابعتيلي صورة أغرب حاجة قدامك دلوقتي 👀",
+"قلّدي مشهد درامي من مسلسل بالغلط عن قصد 🎬",
+"اتكلمي بصوت كتكوت لمدة دقيقة في الفويس 🐥",
+"اخترعي اسم لحيوان مالوش وجود ووصفيه 🦄",
+"ابعتي 5 إيموجي بس تحكي بيهم يومك 😵",
+"اعملي رقصة هبلة 10 ثواني وابعتيلي فيديو 💃",
+"قولي نكتة وحشة جداً عن قصد 😅",
+"اتخيلي إنك وزيرة، أول قرار هتعمليه إيه؟ 👑",
+"غنّي أغنية بصوت الأكل: حمص أو فول 🎤",
+"مثّلي إنك مذيعة طبخ وانتي بتعملي سندوتش 🥪"];
+const S="أنا آسف إني زعلتك، ومش عاجبني أشوفك زعلانة. عملت الصفحة دي عشان أشوفك بتضحكي، لأن ضحكتك تفرق معايا أوي. ممكن نتكلم ونصلّح الدنيا؟ ❤️";
+let j=0,w=0,c=0;
+const e=id=>document.getElementById(id);
+const T=["المسلسلات","الأكل","النوم","الامتحانات والمذاكرة","الموبايل والتيك توك","القطط","الصحاب","الشغل","الدنيا والحياة"];
+function nextWyr(){const q=W[w++%W.length];e("wyr").textContent=q}
+let lc=-1;
+function nextCh(){let n;do{n=Math.floor(Math.random()*C.length)}while(n===lc);lc=n;e("ch").textContent=C[n]}
+const M=["ما انا هرخم هرخم لغاية لما تفكى😂😂","بلاش تناقرى مع الكل😂","مفيش حاجة تزعل القمر❤","هفضل اناقر برضو😂"];
+let mi=-1;
+function openSur(){
+ let n;do{n=Math.floor(Math.random()*M.length)}while(n===mi);
+ mi=n;e("sur").textContent=M[n];
+}
+const Q=[
+["لو هتتفرجي على مسلسل النهاردة، إيه النوع؟",["كوميدي 😂","رومانسي 💕","أكشن وغموض 🕵️","دراما تعيّط 😭"]],
+["أكتر حاجة بتعمليها وانتي بتتفرجي؟",["باكل سناكس 🍿","ماسكة الموبايل 📱","بتكلم على المسلسل 🗣️","بركز وماحدش يكلمني 🤫"]],
+["بتذاكري أو بتخلصي شغلك إمتى؟",["قبلها بشهر 😇","قبلها بأسبوع 📅","ليلة الامتحان 😬","آخر ساعة بالظبط 🔥"]],
+["لو بقيتي بطلة مسلسل، اسمه إيه؟",["البنت اللي بتنام كتير 😴","ملكة الأكل 👑","حلقة كمان بس 📺","مدام فوضى 🌪️"]],
+["أكلة تاكليها في أي وقت؟",["كشري 🍝","بيتزا 🍕","شاورما 🌯","حلويات 🍰"]],
+["لو معاكي قوة خارقة، تختاري إيه؟",["أنام وقت ما أحب 😴","أعرف نهاية المسلسل من الأول 🔮","آكل من غير ما أتخن 🍫","أوقف الزمن ⏸️"]],
+["الساعة 3 الفجر بتعملي إيه غالباً؟",["نايمة 💤","بتفرج على مسلسل 📺","بسكرول تيك توك 📱","بفكر في حاجات هبلة 🤔"]],
+["إيه أكتر حاجة بتضحكك؟",["ميمز 🐸","فيديوهات تيك توك 🎵","مواقف حقيقية 😂","حد يتكسف قدامي 🙈"]],
+["لو هتسافري دلوقتي؟",["البحر 🏖️","الجبل ⛰️","مدينة كبيرة 🌆","سرير الفندق بس 🛏️"]],
+["لو هتبقي حيوان؟",["قطة 🐱","كلب 🐶","باندا 🐼","كسلان 🦥"]],
+["تقدري تقعدي أسبوع من غير؟",["الموبايل 📵","المسلسلات 📺","الحلو 🍬","النوم 😵"]],
+["إيه أحلى هدية؟",["شوكولاتة 🍫","ورد 🌹","مسلسل جديد تتفرجي عليه 🎬","رسالة حلوة 💌"]],
+["لو هتبقي شخصية كرتون؟",["توم 🐱","جيري 🐭","سبونج بوب 🧽","بيكاتشو ⚡"]],
+["أول حاجة بتعمليها لما تصحي؟",["أمسك الموبايل 📱","أكل 🍳","أكمل نوم 😴","أشرب قهوة ☕"]],
+["إيه اللي يظبط مزاجك؟",["أغنية حلوة 🎶","أكل 🍟","فيديو مضحك 😹","حد يحضنني 🤗"]],
+["لو ممتحنة ميد ترم بكرة وانتي مش جاهزة؟",["أذاكر طول الليل 📚","أنام وربنا يسهلها 🙏","أتفرج على مسلسل 📺","أعمل نفسي تعبانة 🤒"]]
+];
+const R=["اختيار جامد 😍","أنا كمان! 😂","ده اختيار ناس بتفهم 🌸","كنت متأكد 🙈","قوليلي ليه في الشات 😉","حلو أوي! 😄","محدش قدك 😎"];
+let qo=[],qi=0;
+function nextQ(){
+ if(qi>=qo.length){qo=Q.map((_,i)=>i).sort(()=>Math.random()-.5);qi=0}
+ const q=Q[qo[qi++]];
+ e("qq").textContent=q[0];e("qr").textContent="";
+ const box=e("qa");box.innerHTML="";
+ q[1].forEach(o=>{const b=document.createElement("button");b.textContent=o;b.onclick=()=>pickQ(b);box.appendChild(b)});
+ e("qn").style.display="none";
+}
+function pickQ(b){
+ [...e("qa").children].forEach(x=>{x.disabled=true;x.style.opacity=.5});
+ b.style.opacity=1;b.style.outline="3px solid var(--accent)";
+ e("qr").textContent=R[Math.floor(Math.random()*R.length)];
+ e("qn").style.display="inline-block";
+}
+nextQ();
+
+const ROOM="laugh-7a5f098ccf99d98c";
+const BASE="https://ntfy.sh/"+ROOM;
+let myId="";
+try{myId=localStorage.getItem("chatUid")||"";if(!myId){myId=Math.random().toString(36).slice(2)+Date.now().toString(36);localStorage.setItem("chatUid",myId)}}catch(x){myId=myId||Math.random().toString(36).slice(2)}
+let msgs=[],seen=new Set();
+try{msgs=JSON.parse(localStorage.getItem("chatLog")||"[]");msgs.forEach(m=>seen.add(m.id))}catch(x){msgs=[]}
+function addMsg(m){
+ if(seen.has(m.id))return;
+ seen.add(m.id);msgs.push(m);msgs.sort((a,b)=>a.t-b.t);
+ if(msgs.length>200)msgs=msgs.slice(-200);
+ try{localStorage.setItem("chatLog",JSON.stringify(msgs))}catch(x){}
+ render(msgs);
+}
+function getName(){try{return localStorage.getItem("chatName")||""}catch(x){return ""}}
+function setName(v){try{localStorage.setItem("chatName",v.trim())}catch(x){}}
+function render(list){
+ const box=e("cl");box.innerHTML="";
+ list.forEach(m=>{
+  const d=document.createElement("div");
+  if(m.kind==="act"){d.className="m act";d.textContent="👉 "+m.name+": "+m.text}
+  else{const mine=m.uid&&m.uid===myId;d.className="m"+(mine?" me":"");if(!mine){const b=document.createElement("b");b.textContent=m.name;d.appendChild(b)}d.appendChild(document.createTextNode(m.text));const tm=document.createElement("span");tm.className="tm";try{tm.textContent=new Date(m.t).toLocaleTimeString("ar-EG",{hour:"numeric",minute:"2-digit"})}catch(x){}d.appendChild(tm)}
+  box.appendChild(d);
+ });
+ box.scrollTop=box.scrollHeight;
+}
+async function sendMsg(kind,text){
+ const n=getName();
+ if(!n){e("cn").textContent="اكتب اسمك فوق الأول 🙂";return}
+ try{
+  const r=await fetch(BASE,{method:"POST",body:JSON.stringify({u:myId,n:n,k:kind,x:text})});
+  if(!r.ok)throw 0;
+  const j=await r.json();
+  addMsg({id:j.id,t:(j.time||Math.floor(Date.now()/1000))*1000,uid:myId,name:n,kind:kind,text:text});
+  e("cn").textContent="";
+ }catch(x){e("cn").textContent="ما اتبعتتش، جرّب تاني"}
+}
+function sendTyped(){const i=e("ci");const v=i.value.trim();if(!v)return;i.value="";sendMsg("msg",v)}
+function logAct(t){sendMsg("act",t)}
+const _pq=pickQ;pickQ=function(b){_pq(b);logAct("جاوبت على «"+e("qq").textContent+"» بـ "+b.textContent)};
+const _nc=nextCh;nextCh=function(){_nc();logAct("طلبت تحدي: "+e("ch").textContent)};
+const _os=openSur;openSur=function(){_os();logAct("فتحت المفاجأة: "+e("sur").textContent)};
+function initChat(){
+ const note=e("cn");e("cname").value=getName();
+ render(msgs);
+ if(!window.EventSource){note.textContent="المتصفح ده مش بيدعم الشات";return}
+ const es=new EventSource(BASE+"/sse?since=all");
+ es.onopen=()=>{note.textContent=""};
+ es.onerror=()=>{note.textContent="بحاول أتصل بالشات…"};
+ es.onmessage=ev=>{
+  try{
+   const d=JSON.parse(ev.data);
+   if(d.event&&d.event!=="message")return;
+   const p=JSON.parse(d.message);
+   if(!p||typeof p.x!=="string")return;
+   addMsg({id:d.id,t:(d.time||0)*1000,uid:p.u,name:String(p.n||"").slice(0,40),kind:p.k==="act"?"act":"msg",text:p.x.slice(0,1000)});
+  }catch(x){}
+ };
+}
+initChat();
+</script>
+</body>
+</html>
